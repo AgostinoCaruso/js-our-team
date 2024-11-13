@@ -8,17 +8,64 @@ Dato un array di oggetti rappresentante un team di un’azienda, creare una pagi
 
 import { teamMembers } from "./db.js"
 
-//todo
-//load all card and display
-//add a form to add new members
-
-//div HTML
+//div element card
+const wrapperMain = document.getElementById("wrapperMain");
+const wrapperAddMember = document.getElementById("wrapperAddMember");
 const containerCard = document.getElementById("container-card");
 
-StartApp();
+//input form
+const nameAddMember = document.getElementById("nameForm");
+const emailAddMember = document.getElementById("emailForm");
+const roleAddMember = document.getElementById("roleForm");
+const selectAddMember = document.getElementById("selectImg");
 
-function StartApp() {
-    //const fragment = document.createDocumentFragment();
+
+
+GenerateCard();
+
+
+//btn
+const btnAddMember = document.getElementById("btnAddMember");
+const btnSubmitMember = document.getElementById("btnSubmitMember");
+
+//event
+btnAddMember.addEventListener("click", function(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    DisplayNone();
+});
+
+btnSubmitMember.addEventListener("click", function(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    DisplayNone();
+
+    AddNewMember();
+});
+
+
+//function
+function DisplayNone(){
+    wrapperMain.classList.toggle("d-none");
+    btnAddMember.classList.toggle("d-none");
+    wrapperAddMember.classList.toggle("d-none");
+}
+
+function AddNewMember(){
+    teamMembers.push({   
+        name: nameAddMember.value, 
+        role: roleAddMember.value,
+        email: emailAddMember.value,
+        img: selectAddMember.value
+    })
+
+    console.log(teamMembers);
+    GenerateCard();
+}
+
+function GenerateCard() {
     const template = teamMembers.map(element => `
         <div class="col-4 p-2">
             <div class= "myCard d-flex flex-row" >
@@ -34,10 +81,8 @@ function StartApp() {
             </div>
         </div>
     `).join("");
-    //containerCard.appendChild(fragment);
     containerCard.innerHTML = template;
 }
-
 
 
 

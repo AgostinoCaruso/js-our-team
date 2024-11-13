@@ -15,14 +15,53 @@
 </head>
 
 <body>
-    <div class="container d-flex flex-column align-items-center">
+    <div class="container d-flex flex-column align-items-center" id="wrapperMain">
         <h1 class="space-Argument fw-bold">Meet our Team</h1>
         <p class="space-Argument text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
             assumenda provident, quo quibusdam nobis ea cumque, recusandae commodi possimus numquam error incidunt
             reiciendis veniam ipsum ipsa voluptatibus! Tenetur, earum quis.</p>
         <div id="container-card" class="container space-Argument row">
                 <!-- here i generate card via js -->
-        </div>
-
+        </div>        
+    </div>
+    <!-- form add new members -->
+    <div class="container d-none" id="wrapperAddMember">
+        <h1 class="space-Argument fw-bold text-center">Join our Team</h1>
+        <form class="row py-5">
+            <div class="form-group col-3">
+                <label for="nameForm">Name</label>
+                <input type="text" class="form-control" id="nameForm" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group col-3">
+              <label for="emailForm">Email</label>
+              <input type="email" class="form-control" id="emailForm" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group col-3">
+              <label for="roleForm">Role</label>
+              <input type="text" class="form-control" id="roleForm" placeholder="Enter your role" required>
+            </div>
+            <div class="col-3">
+                <label for="selectImg">Select image</label>
+                <select class="form-select" id="selectImg">
+                    <option value="img/male1.png">image 1</option>
+                    <option value="img/female1.png">image 2</option>
+                    <option value="img/male2.png">image 3</option>
+                    <option value="img/female2.png">image 4</option>
+                    <option value="img/male3.png">image 5</option>
+                    <option value="img/female3.png">image 6</option>
+                  </select>
+            </div>
+            <div class="d-flex justify-content-center py-3">
+                <div class="px-3">
+                    <button type="submit" class="btn btn-primary" id="btnSubmitMember">Add member</button>
+                </div>
+                <div class="px-3">
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                </div>
+            </div>
+          </form>
+    </div>
+    <div class="d-flex justify-content-center space-Argument">
+        <button class="btn btn-primary" id="btnAddMember"> Add new member</button>
     </div>
 </body>

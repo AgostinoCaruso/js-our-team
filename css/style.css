@@ -8,7 +8,7 @@ h1 {
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 a{
     text-decoration: none;
@@ -51,4 +51,9 @@ a{
 
 .cardEmail {
     color: lightblue;
+}
+
+
+.d-none{
+    display: none;
 }
